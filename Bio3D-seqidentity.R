@@ -1,4 +1,6 @@
-library(bio3d)
+library(bio3d)        # Main library
+library(ggplot2)      # Library for heatmap
+library(DT)           # Library for nice tables
 #demo("pdb")
 #demo("pca")
 
@@ -17,3 +19,6 @@ pdbs <- pdbaln(files)
 pdbs$id <- substr(basename(pdbs$id),1,6)
 seqidentity(pdbs)
 
+heatmap(seqidentity(pdbs))
+
+datatable(seqidentity(pdbs))
